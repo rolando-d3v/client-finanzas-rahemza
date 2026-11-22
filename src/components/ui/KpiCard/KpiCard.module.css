@@ -1,0 +1,122 @@
+/* @import "../../../styles/color.css"; */
+
+.card {
+  background-color: var(--color-fondo-card);
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde-suave);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+  min-width: 200px;
+  flex: 1;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-dropdown);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.iconWrapper {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+/* Color variants for icon */
+.primary .iconWrapper {
+  background-color: var(--color-primario-muysuave);
+  color: var(--color-primario);
+}
+.success .iconWrapper {
+  background-color: var(--color-exito-fondo);
+  color: var(--color-exito);
+}
+.warning .iconWrapper {
+  background-color: var(--color-advertencia-fondo);
+  color: var(--color-advertencia);
+}
+.error .iconWrapper {
+  background-color: var(--color-error-fondo);
+  color: var(--color-error);
+}
+.info .iconWrapper {
+  background-color: var(--color-info-fondo);
+  color: var(--color-info);
+}
+
+.value {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.variation {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+
+.positive {
+  color: var(--color-exito);
+  background-color: var(--color-exito-fondo);
+}
+
+.negative {
+  color: var(--color-error);
+  background-color: var(--color-error-fondo);
+}
+
+.variationLabel {
+  font-size: 12px;
+  color: var(--color-texto-secundario);
+}
+
+.bg_principal {
+  background-color: var(--primary_color);
+
+  .label {
+    color: var(--color-texto-boton);
+  }
+
+  .iconWrapper {
+    background-color: #ffffff;
+    /* background-color: var(--color-error-fondo); */
+    color: var(--color-texto-boton);
+  }
+  .value {
+    color: var(--color-texto-boton);
+  }
+}

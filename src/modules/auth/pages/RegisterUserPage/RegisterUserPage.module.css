@@ -1,0 +1,239 @@
+/* ═══════════════════════════════════════════════════════════════
+ *  REGISTER PAGE — Premium Auth Layout
+ *  Design System: color.css tokens + light-dark() adaptive
+ * ═══════════════════════════════════════════════════════════════ */
+
+/* ─── Page Container ──────────────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  /* background: var(--color-fondo-app); */
+  padding: 2rem 1rem;
+}
+
+
+
+/* ─── Card (Glassmorphism) ────────────────────────────────────── */
+.card {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 560px;
+  padding: 2.5rem 2.5rem 2rem;
+  background: white;
+  backdrop-filter: blur(28px) saturate(1.4);
+  -webkit-backdrop-filter: blur(28px) saturate(1.4);
+  border: 1px solid var(--color-borde-suave);
+  border-radius: 24px;
+  box-shadow: var(--sombra-modal);
+  animation: cardEnter 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+  overflow: hidden;
+}
+
+/* ── Subtle top accent line ── */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primario) 30%,
+    var(--color-secundario) 70%,
+    transparent
+  );
+  border-radius: 0 0 2px 2px;
+  opacity: 0.6;
+}
+
+@keyframes cardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(32px) scale(0.96);
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+/* ─── Header ──────────────────────────────────────────────────── */
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  margin-bottom: 0.75rem;
+}
+
+.logoIcon {
+  font-size: 2.75rem;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 12px rgba(163, 230, 53, 0.25));
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+.title {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.subtitle {
+  font-size: 0.88rem;
+  color: var(--color-texto-secundario);
+  line-height: 1.55;
+}
+
+/* ─── Divider ─────────────────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-primario-suave),
+    transparent
+  );
+}
+
+.dividerText {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-texto-secundario);
+  white-space: nowrap;
+}
+
+/* ─── Footer ──────────────────────────────────────────────────── */
+.footer {
+  text-align: center;
+  margin-top: 1.25rem;
+  font-size: 0.75rem;
+  color: var(--color-texto-placeholder);
+}
+
+/* ─── Background Decoration ───────────────────────────────────── */
+.bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bgCircle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.3;
+  will-change: transform;
+}
+
+.bgCircle1 {
+  width: 420px;
+  height: 420px;
+  background: var(--color-primario);
+  top: -140px;
+  right: -100px;
+  animation: orbitBg1 12s ease-in-out infinite;
+}
+
+.bgCircle2 {
+  width: 340px;
+  height: 340px;
+  background: var(--color-secundario);
+  bottom: -120px;
+  left: -120px;
+  animation: orbitBg2 14s ease-in-out infinite 1s;
+}
+
+.bgCircle3 {
+  width: 200px;
+  height: 200px;
+  background: var(--color-gamificacion);
+  top: 45%;
+  left: 62%;
+  animation: orbitBg3 10s ease-in-out infinite 2s;
+}
+
+.bgCircle4 {
+  width: 280px;
+  height: 280px;
+  background: var(--color-progreso);
+  bottom: 20%;
+  right: -80px;
+  animation: orbitBg2 16s ease-in-out infinite 3s;
+}
+
+/* ── Organic orbit animations (more alive than simple pulse) ── */
+@keyframes orbitBg1 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  33% { transform: translate(-20px, 15px) scale(1.1); opacity: 0.2; }
+  66% { transform: translate(10px, -10px) scale(0.95); opacity: 0.35; }
+}
+
+@keyframes orbitBg2 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+  50% { transform: translate(25px, -20px) scale(1.12); opacity: 0.18; }
+}
+
+@keyframes orbitBg3 {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  40% { transform: translate(-15px, 10px) scale(1.08); opacity: 0.22; }
+  70% { transform: translate(8px, -15px) scale(0.92); opacity: 0.32; }
+}
+
+/* ─── Responsive ──────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .page {
+    padding: 1rem 0.75rem;
+  }
+
+  .card {
+    padding: 2rem 1.25rem 1.5rem;
+    border-radius: 20px;
+  }
+
+  .title {
+    font-size: 1.4rem;
+  }
+
+  .bgCircle1 { width: 280px; height: 280px; }
+  .bgCircle2 { width: 220px; height: 220px; }
+  .bgCircle3 { width: 140px; height: 140px; }
+  .bgCircle4 { width: 180px; height: 180px; }
+}
+
+@media (min-width: 481px) and (max-width: 640px) {
+  .card {
+    max-width: 440px;
+    padding: 2rem 1.5rem;
+  }
+}

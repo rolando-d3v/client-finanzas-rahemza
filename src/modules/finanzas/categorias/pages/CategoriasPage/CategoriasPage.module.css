@@ -1,0 +1,228 @@
+@import "../../../../../styles/color.css";
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 4px;
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media screen and (max-width: 780px) {
+  .headerRow {
+    flex-direction: column;
+  }
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  margin: 0;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* ── Toolbar ──────────────────────────────────────── */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filterSelect {
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-input);
+  color: var(--color-texto-body);
+  font-size: 13px;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.filterSelect:focus {
+  border-color: var(--color-borde-focus);
+}
+
+/* ── Table Card ────────────────────────────────────── */
+.tableCard {
+  background-color: var(--color-fondo-card);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde-suave);
+  overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+  .tableCard {
+    padding: 6px;
+    border-radius: 16px;
+  }
+}
+
+
+
+/* ── Buttons ───────────────────────────────────────── */
+.primaryBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: none;
+  background-color: var(--color-primario);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.primaryBtn:hover {
+  background-color: var(--color-primario-hover);
+}
+
+.primaryBtn:active {
+  transform: scale(0.97);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondaryBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background: transparent;
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondaryBtn:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-primario);
+}
+
+/* ── Form ──────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.formInput {
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-input);
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.formInput:focus {
+  border-color: var(--color-borde-focus);
+  box-shadow: var(--focus-ring);
+}
+
+.formError {
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+/* ── Color Palette Picker ────────────────────────────── */
+.paletteGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 4px 0;
+}
+
+.colorCircle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.colorCircle:hover {
+  transform: scale(1.12);
+}
+
+.colorCircleActive {
+  transform: scale(1.12);
+  border-color: var(--color-texto-heading);
+  box-shadow: 0 0 0 3px var(--color-primario-suave), 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.checkMark {
+  color: #111b21;
+  font-weight: 800;
+  font-size: 14px;
+  text-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+}
+

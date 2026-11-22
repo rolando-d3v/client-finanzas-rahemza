@@ -1,0 +1,213 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+  z-index: 30;
+  position: relative;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Variante Advertencia (Amber / Gold) ── */
+.bannerWarning {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.12) 0%, rgba(217, 119, 6, 0.08) 100%);
+  border-bottom-color: rgba(245, 158, 11, 0.3);
+  color: #d97706;
+}
+
+[data-theme="dark"] .bannerWarning {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.12) 100%);
+  border-bottom-color: rgba(245, 158, 11, 0.35);
+  color: #fbbf24;
+}
+
+/* ── Variante Peligro / Gracia (Rose / Red) ── */
+.bannerDanger {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.15) 0%, rgba(220, 38, 38, 0.1) 100%);
+  border-bottom-color: rgba(239, 68, 68, 0.35);
+  color: #dc2626;
+}
+
+[data-theme="dark"] .bannerDanger {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.22) 0%, rgba(220, 38, 38, 0.15) 100%);
+  border-bottom-color: rgba(239, 68, 68, 0.45);
+  color: #f87171;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.bannerWarning .iconWrapper {
+  background: rgba(245, 158, 11, 0.2);
+}
+
+.bannerDanger .iconWrapper {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.iconWarning {
+  font-size: 1.15rem;
+  color: #d97706;
+}
+
+[data-theme="dark"] .iconWarning {
+  color: #fbbf24;
+}
+
+.iconDanger {
+  font-size: 1.15rem;
+  color: #ef4444;
+}
+
+[data-theme="dark"] .iconDanger {
+  color: #f87171;
+}
+
+.textWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+.bannerWarning .badge {
+  background: rgba(245, 158, 11, 0.25);
+  color: #b45309;
+}
+
+[data-theme="dark"] .bannerWarning .badge {
+  background: rgba(245, 158, 11, 0.3);
+  color: #fde68a;
+}
+
+.bannerDanger .badge {
+  background: rgba(239, 68, 68, 0.25);
+  color: #b91c1c;
+}
+
+[data-theme="dark"] .bannerDanger .badge {
+  background: rgba(239, 68, 68, 0.35);
+  color: #fca5a5;
+}
+
+.mensaje {
+  margin: 0;
+  font-weight: 500;
+  color: inherit;
+  line-height: 1.4;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.actionBtnWarning {
+  background: #f59e0b;
+  color: #ffffff;
+}
+
+.actionBtnWarning:hover {
+  background: #d97706;
+  transform: translateY(-1px);
+}
+
+.actionBtnDanger {
+  background: #ef4444;
+  color: #ffffff;
+}
+
+.actionBtnDanger:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+.closeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: inherit;
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 0.35rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: opacity 0.2s ease, background 0.2s ease;
+}
+
+.closeBtn:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .closeBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 640px) {
+  .banner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.75rem 1rem;
+  }
+  .actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}

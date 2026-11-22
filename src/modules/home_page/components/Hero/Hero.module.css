@@ -1,0 +1,70 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+.content_mask {
+  width: 100%;
+  min-height: 800vh;
+}
+
+.logox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+}
+
+.logo_mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  background: black;
+  mask-image: url("/celu.svg");
+  -webkit-mask-image: url("/celu.svg");
+  mask-position: center;
+  -webkit-mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+}
+
+.flash_effect {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+
+
+
+.container_home {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+}
+
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sombra_image {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* gris con opacidad */
+  z-index: 1;
+}

@@ -1,0 +1,235 @@
+@import "../../../../../styles/color.css";
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 4px;
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  margin: 0;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+}
+
+/* ── KPI Grid ──────────────────────────────────────── */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* ── Charts ────────────────────────────────────────── */
+.chartsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.chartCard {
+  background-color: var(--color-fondo-card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde-suave);
+}
+
+.chartTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+  margin: 0 0 4px;
+}
+
+.chartSubtitle {
+  font-size: 12px;
+  color: var(--color-texto-secundario);
+  margin: 0 0 16px;
+}
+
+/* ── Bottom Row ────────────────────────────────────── */
+.bottomRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.tableCard {
+  background-color: var(--color-fondo-card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde-suave);
+}
+
+/* ── Transaction List ──────────────────────────────── */
+.transactionList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.transactionItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  transition: background-color 0.2s;
+}
+
+.transactionItem:hover {
+  background-color: var(--color-fondo-hover);
+}
+
+.transactionIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  background-color: var(--color-fondo-skeleton);
+  flex-shrink: 0;
+}
+
+.transactionInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.transactionDesc {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-texto-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transactionMeta {
+  font-size: 12px;
+  color: var(--color-texto-secundario);
+}
+
+.transactionAmount {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.income {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-exito);
+}
+
+.expense {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-error);
+}
+
+/* ── Metas ─────────────────────────────────────────── */
+.metasList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.metaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metaName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-texto-heading);
+}
+
+.metaPercent {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primario);
+}
+
+.progressBar {
+  height: 8px;
+  background-color: var(--color-fondo-skeleton);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primario), var(--color-progreso));
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+.metaFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--color-texto-secundario);
+}
+
+.metaDate {
+  color: var(--color-texto-placeholder);
+}
+
+.emptyText {
+  font-size: 14px;
+  color: var(--color-texto-placeholder);
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .chartsRow, .bottomRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+}

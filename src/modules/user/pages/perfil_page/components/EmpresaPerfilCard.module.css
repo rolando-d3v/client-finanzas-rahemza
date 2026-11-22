@@ -1,0 +1,370 @@
+/* ═══════════════════════════════════════════════════════════════
+   EMPRESA PERFIL CARD — CSS MODULE (DARK & LIGHT MODE)
+   Tokens desde src/styles/color.css
+   ═══════════════════════════════════════════════════════════════ */
+
+.card {
+  background-color: var(--color-fondo-card);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde-suave);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--color-borde);
+}
+
+/* ─── Header ─── */
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.iconCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: var(--color-fondo-activo);
+  border: 1px solid var(--color-borde-activo);
+  color: var(--color-secundario);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-texto-heading);
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: 13.5px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ─── Badges ─── */
+.googleBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--color-fondo-input);
+  border: 1px solid var(--color-borde);
+  color: var(--color-texto-heading);
+}
+
+.googleIcon {
+  color: #ea4335;
+  font-size: 13px;
+}
+
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--color-fondo-activo);
+  color: var(--color-texto-heading);
+  border: 1px solid var(--color-borde-activo);
+}
+
+/* ─── Botón Editar ─── */
+.editBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--color-bg-boton, #a3e635);
+  color: var(--color-texto-boton, #111b21);
+  border: none;
+  padding: 8px 18px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(163, 230, 53, 0.25);
+  transition: all 0.2s ease;
+}
+
+.editBtn:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(163, 230, 53, 0.35);
+}
+
+/* ─── Info Grid ─── */
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background-color: var(--color-fondo-input);
+  border-radius: 14px;
+  border: 1px solid var(--color-borde-suave);
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.infoItem:hover {
+  border-color: var(--color-borde);
+  background-color: var(--color-fondo-hover);
+}
+
+.infoIcon {
+  color: var(--color-primario);
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.infoText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: var(--color-texto-secundario);
+  font-weight: 500;
+}
+
+.infoValue {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ─── Skeleton Loading ─── */
+.skeletonContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skeletonHeader {
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, var(--color-fondo-skeleton) 25%, var(--color-fondo-elevado) 50%, var(--color-fondo-skeleton) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ─── Formulario de Edición en Modal ─── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 4px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 600px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formLabel {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.formInput {
+  background-color: var(--color-fondo-input);
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-size: 13.5px;
+  color: var(--color-texto-body);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--color-borde-focus);
+  box-shadow: var(--focus-ring);
+}
+
+.formError {
+  font-size: 11.5px;
+  color: var(--color-error);
+  font-weight: 600;
+}
+
+/* ─── Footer Buttons ─── */
+.modalFooter {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.cancelBtn {
+  background: transparent;
+  color: var(--color-texto-secundario);
+  border: 1px solid var(--color-borde);
+  padding: 9px 18px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancelBtn:hover {
+  background-color: var(--color-fondo-hover);
+  color: var(--color-texto-heading);
+}
+
+.saveBtn {
+  background-color: var(--color-bg-boton, #a3e635);
+  color: var(--color-texto-boton, #111b21);
+  border: none;
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.saveBtn:hover {
+  filter: brightness(0.95);
+  transform: translateY(-1px);
+}
+
+.saveBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ─── Campo de Correo Gmail Bloqueado (Read-Only) ─── */
+.labelWithBadge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.lockedBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background-color: var(--color-fondo-skeleton);
+  color: var(--color-texto-secundario);
+  border: 1px solid var(--color-borde-suave);
+}
+
+.lockedBadgeIcon {
+  font-size: 11px;
+  color: var(--color-texto-secundario);
+}
+
+.lockedInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputLocked {
+  background-color: var(--color-fondo-skeleton) !important;
+  color: var(--color-texto-secundario) !important;
+  cursor: not-allowed !important;
+  border-color: var(--color-borde-suave) !important;
+  user-select: all;
+  padding-right: 38px;
+  opacity: 0.85;
+}
+
+.inputLocked:focus {
+  outline: none !important;
+  border-color: var(--color-borde-suave) !important;
+  box-shadow: none !important;
+}
+
+.inputLockIcon {
+  position: absolute;
+  right: 12px;
+  color: var(--color-texto-placeholder);
+  font-size: 15px;
+  pointer-events: none;
+}
+
+.lockedHelpText {
+  font-size: 11.5px;
+  color: var(--color-texto-placeholder);
+  margin-top: 2px;
+}
+

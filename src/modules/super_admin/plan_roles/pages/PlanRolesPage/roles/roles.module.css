@@ -1,0 +1,538 @@
+@import "../../../../../../styles/color.css";
+
+/* ═══════════════════════════════════════════════════════════════
+   KPI GRID & TOOLBAR
+   ═══════════════════════════════════════════════════════════════ */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════════════════════ */
+.primaryBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: none;
+  background-color: var(--color-primario);
+  color: #111b21;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.primaryBtn:hover {
+  background-color: var(--color-primario-hover);
+}
+
+.primaryBtn:active {
+  transform: scale(0.97);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondaryBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background: transparent;
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondaryBtn:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-primario);
+}
+
+.dangerBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: none;
+  background-color: var(--color-error);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.dangerBtn:hover {
+  filter: brightness(1.1);
+}
+
+.dangerBtn:active {
+  transform: scale(0.97);
+}
+
+.iconBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+  background: transparent;
+  color: var(--color-texto-secundario);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.iconBtn:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-primario);
+  color: var(--color-primario);
+}
+
+.iconBtnDanger:hover {
+  background-color: var(--color-error-fondo);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.iconBtnSuccess:hover {
+  background-color: var(--color-exito-fondo);
+  border-color: var(--color-exito);
+  color: var(--color-exito);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   ROLES TABLE
+   ═══════════════════════════════════════════════════════════════ */
+.tableCard {
+  background-color: var(--color-fondo-card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde-suave);
+}
+
+.rolesTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+}
+
+.rolesTable th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.rolesTable td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--color-texto-body);
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.rolesTable tr:hover td {
+  background-color: var(--color-fondo-hover);
+}
+
+.roleNameCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.roleAvatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--color-primario-suave);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.roleName {
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.roleDesc {
+  font-size: 12px;
+  color: var(--color-texto-secundario);
+}
+
+.planLimitChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: var(--color-tag-fondo);
+  color: var(--color-tag-texto);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.treeActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BADGES & TOGGLE SWITCH
+   ═══════════════════════════════════════════════════════════════ */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badgeActive {
+  background: var(--color-exito-fondo);
+  color: var(--color-exito-texto);
+}
+
+.badgeInactive {
+  background: var(--color-error-fondo);
+  color: var(--color-error-texto);
+}
+
+.badgeSystem {
+  background: var(--color-info-fondo);
+  color: var(--color-info-texto);
+}
+
+.toggleSwitch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.toggleSwitchOn {
+  background: var(--color-exito);
+}
+
+.toggleSwitchOff {
+  background: var(--color-borde);
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggleKnobOn {
+  left: 23px;
+}
+
+.toggleKnobOff {
+  left: 3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FORM
+   ═══════════════════════════════════════════════════════════════ */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.formInput {
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-input);
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.formInput:focus {
+  border-color: var(--color-borde-focus);
+  box-shadow: var(--focus-ring);
+}
+
+.formTextarea {
+  min-height: 80px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-input);
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  resize: vertical;
+}
+
+.formTextarea:focus {
+  border-color: var(--color-borde-focus);
+  box-shadow: var(--focus-ring);
+}
+
+.formError {
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   PERMISSIONS TABLE
+   ═══════════════════════════════════════════════════════════════ */
+.selectAllBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background: var(--color-fondo-skeleton);
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.selectAllLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.permScrollContainer {
+  max-height: 450px;
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid var(--color-borde-suave);
+}
+
+.permTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.permTable th {
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 10px 8px;
+  border-bottom: 2px solid var(--color-borde-suave);
+  position: sticky;
+  top: 0;
+  background: var(--color-fondo-card);
+  z-index: 1;
+}
+
+.permTable th:first-child {
+  text-align: left;
+  width: 40%;
+}
+
+.permTable td {
+  padding: 10px 8px;
+  font-size: 13px;
+  color: var(--color-texto-body);
+  text-align: center;
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.permTable td:first-child {
+  text-align: left;
+}
+
+.permModuleName {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.permModuleIcon {
+  font-size: 16px;
+}
+
+.permParentRow td {
+  font-weight: 600;
+  color: var(--color-texto-heading);
+  background: var(--color-fondo-skeleton);
+}
+
+.permChildRow td:first-child {
+  padding-left: 32px;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border-radius: 6px;
+  border: 2px solid var(--color-borde);
+  background: var(--color-fondo-input);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.checkbox:hover {
+  border-color: var(--color-primario);
+}
+
+.checkboxChecked {
+  background: var(--color-primario);
+  border-color: var(--color-primario);
+}
+
+.checkboxChecked:hover {
+  background: var(--color-primario-hover);
+  border-color: var(--color-primario-hover);
+}
+
+.checkMark {
+  color: #111b21;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONFIRM DIALOG & EMPTY STATE
+   ═══════════════════════════════════════════════════════════════ */
+.confirmBody {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.confirmIcon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.confirmTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  margin: 0 0 8px 0;
+}
+
+.confirmText {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  gap: 12px;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  opacity: 0.6;
+}
+
+.emptyTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  margin: 0;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .rolesTable {
+    display: block;
+    overflow-x: auto;
+  }
+}

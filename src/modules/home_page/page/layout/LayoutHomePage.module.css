@@ -1,0 +1,9 @@
+.layout {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #ffffff; /* Light Mode base */
+  color: #111b21; /* Dark text for readability */
+  font-family: "Poppins", "Inter", "Montserrat", "Poppins", "Open Sans", "Helvetica Neue", sans-serif;
+  overflow-x: hidden;
+  line-height: 1.5;
+}

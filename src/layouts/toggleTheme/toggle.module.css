@@ -1,0 +1,45 @@
+/* ─── Toggle Button: Sol ↔ Luna ─── */
+.toggleBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 10px;
+  background: var(--color-fondo-hover);
+  color: var(--color-texto-body);
+  font-size: 1.15rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.toggleBtn:hover {
+  background: var(--color-fondo-activo);
+  transform: scale(1.08);
+}
+
+.toggleBtn:active {
+  transform: scale(0.95);
+}
+
+/* ─── Iconos con transición de rotación ─── */
+.icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease, transform 0.4s ease;
+}
+
+.iconVisible {
+  opacity: 1;
+  transform: rotate(0deg) scale(1);
+}
+
+.iconHidden {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.5);
+}

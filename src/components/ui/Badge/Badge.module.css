@@ -1,0 +1,57 @@
+@import "../../../styles/color.css";
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 8px;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+
+.sm {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.md {
+  font-size: 13px;
+  padding: 4px 12px;
+}
+
+.primary {
+  background-color: var(--color-primario-muysuave);
+  color: var(--color-primario-texto);
+  border-color: var(--color-primario-suave);
+}
+
+.success {
+  background-color: var(--color-exito-fondo);
+  color: var(--color-exito-texto);
+  border-color: var(--color-exito-borde);
+}
+
+.warning {
+  background-color: var(--color-advertencia-fondo);
+  color: var(--color-advertencia-texto);
+  border-color: var(--color-advertencia-borde);
+}
+
+.error {
+  background-color: var(--color-error-fondo);
+  color: var(--color-error-texto);
+  border-color: var(--color-error-borde);
+}
+
+.info {
+  background-color: var(--color-info-fondo);
+  color: var(--color-info-texto);
+  border-color: var(--color-info-borde);
+}
+
+.neutral {
+  background-color: var(--color-fondo-skeleton);
+  color: var(--color-texto-secundario);
+  border-color: var(--color-borde-suave);
+}

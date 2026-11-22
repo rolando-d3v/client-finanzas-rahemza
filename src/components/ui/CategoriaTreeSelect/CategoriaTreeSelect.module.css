@@ -1,0 +1,273 @@
+@import "../../../styles/color.css";
+
+/* ── Container ──────────────────────────────────── */
+.container {
+  position: relative;
+  width: 100%;
+}
+
+/* ── Trigger (select button) ────────────────────── */
+.trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 48px;
+  padding: 0 12px 0 16px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-input);
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+  text-align: left;
+}
+
+.trigger:hover {
+  border-color: var(--color-primario);
+}
+
+.trigger:focus-visible,
+.triggerOpen {
+  border-color: var(--color-borde-focus);
+  box-shadow: var(--focus-ring);
+}
+
+.placeholder {
+  color: var(--color-texto-placeholder);
+}
+
+.triggerActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.triggerChevron {
+  color: var(--color-texto-secundario);
+  transition: transform 0.2s ease;
+}
+
+.triggerChevronOpen {
+  transform: rotate(180deg);
+}
+
+.clearBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  color: var(--color-texto-secundario);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.clearBtn:hover {
+  background-color: var(--color-error-fondo);
+  color: var(--color-error);
+}
+
+/* ── Selected category display ──────────────────── */
+.selectedDisplay {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.selectedIcon {
+  font-size: 16px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.selectedDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid var(--color-borde-suave);
+}
+
+.selectedName {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+  color: var(--color-texto-heading);
+}
+
+/* ── Dropdown ───────────────────────────────────── */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: var(--color-fondo-elevado);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  box-shadow: var(--sombra-dropdown);
+  max-height: 320px;
+  overflow-y: auto;
+  animation: dropIn 0.15s ease-out;
+}
+
+@keyframes dropIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar */
+.dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+.dropdown::-webkit-scrollbar-track {
+  background: transparent;
+}
+.dropdown::-webkit-scrollbar-thumb {
+  background-color: var(--color-borde);
+  border-radius: 3px;
+}
+
+.nodeList {
+  padding: 6px;
+}
+
+/* ── Tree node (row) ────────────────────────────── */
+.node {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+  min-height: 40px;
+}
+
+.node:hover {
+  background-color: var(--color-fondo-hover);
+}
+
+.node:focus-visible {
+  outline: 2px solid var(--color-borde-focus);
+  outline-offset: -2px;
+}
+
+/* ── Chevron toggle ─────────────────────────────── */
+.chevronBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--color-texto-secundario);
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  transition: all 0.12s;
+}
+
+.chevronBtn:hover {
+  background-color: var(--color-primario-muysuave);
+  color: var(--color-primario);
+}
+
+.chevronSpacer {
+  display: inline-block;
+  width: 22px;
+  flex-shrink: 0;
+}
+
+/* ── Node contents ──────────────────────────────── */
+.nodeIcon {
+  font-size: 16px;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.colorDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 1.5px solid var(--color-borde-suave);
+}
+
+.nodeName {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-texto-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ── Type badge ─────────────────────────────────── */
+.badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 6px;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.badgeSuccess {
+  background-color: var(--color-exito-fondo);
+  color: var(--color-exito-texto);
+  border: 1px solid var(--color-exito-borde);
+}
+
+.badgeError {
+  background-color: var(--color-error-fondo);
+  color: var(--color-error-texto);
+  border: 1px solid var(--color-error-borde);
+}
+
+
+/* ── Children group (indented) ──────────────────── */
+.childrenGroup {
+  position: relative;
+}
+
+.childrenGroup::before {
+  content: "";
+  position: absolute;
+  left: 26px;
+  top: 0;
+  bottom: 8px;
+  width: 1px;
+  background-color: var(--color-borde-suave);
+}
+
+/* ── Empty message ──────────────────────────────── */
+.emptyMsg {
+  padding: 20px 16px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color-texto-secundario);
+  font-style: italic;
+}

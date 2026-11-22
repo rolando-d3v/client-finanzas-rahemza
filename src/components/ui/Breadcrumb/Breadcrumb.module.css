@@ -1,0 +1,35 @@
+@import "../../../styles/color.css";
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  font-size: 13px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.link {
+  color: var(--color-texto-secundario);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--color-primario);
+}
+
+.separator {
+  color: var(--color-texto-placeholder);
+  font-size: 12px;
+  margin: 0 4px;
+}
+
+.current {
+  color: var(--color-texto-heading);
+  font-weight: 600;
+}

@@ -1,0 +1,552 @@
+/* ═══════════════════════════════════════════════════════════════
+   SIDEBAR
+   ═══════════════════════════════════════════════════════════════ */
+.sidebar {
+  width: var(--sidebar-width, 260px);
+  /* background: var(--color-fondo-sidebar); */
+  background: var(--tertiary_color);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 100;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: var(--sombra-card);
+  border: none;
+}
+
+.sidebarCollapsed {
+  width: var(--sidebar-collapsed-width, 84px);
+}
+
+/* ── Header ──────────────────────────────────────────────────── */
+.header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem 1.5rem;
+  height: auto;
+  border-bottom: none;
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    overflow: hidden;
+
+    .logoIcon {
+      width: 44px;
+      height: 44px;
+    }
+
+    .logoText {
+      color: var(--color-primario);
+      font-size: 1.2rem;
+      font-family:  "Black Ops One";
+    }
+  }
+}
+
+.sidebarCollapsed .header {
+  padding: 1.5rem 0.5rem;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.logo {
+  width: 46px;
+  height: 46px;
+}
+
+.toggle_open {
+  position: absolute;
+  right: 20px;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  color: var(--color-texto-sidebar-muted);
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  display: flex;
+  font-size: 1.25rem;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.toggle:hover {
+  color: var(--color-texto-sidebar);
+  background: var(--color-hover-overlay);
+}
+
+
+
+/* ── Empresa Badge ───────────────────────────────────────────── */
+.empresaInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 0.8rem 1rem;
+  margin: 0 1.2rem 1.2rem 1.2rem;
+  /* background: var(--color-fondo-sidebar-activo); */
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 0.35rem;
+}
+
+.empresaInfo:hover {
+  border-color: var(--color-primario);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(123, 97, 255, 0.15);
+}
+
+.empresaHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.empresaTitleWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-width: 0;
+  flex: 1;
+}
+
+.empresaIcon {
+  color: var(--color-primario);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.empresaNombre {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.empresaPlanBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(163, 230, 53, 0.16) 0%, rgba(34, 197, 94, 0.10) 100%);
+  border: 1px solid rgba(163, 230, 53, 0.35);
+  color: #bef264;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  padding: 0.18rem 0.5rem;
+  border-radius: 6px;
+  flex-shrink: 0;
+  user-select: none;
+  box-shadow: 0 0 10px rgba(163, 230, 53, 0.12);
+  transition: all 0.2s ease;
+}
+
+.empresaInfo:hover .empresaPlanBadge {
+  border-color: rgba(163, 230, 53, 0.6);
+  box-shadow: 0 0 14px rgba(163, 230, 53, 0.22);
+  color: #d9f99d;
+}
+
+.empresaRuc {
+  color: var(--color-texto-sidebar-muted);
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding-left: 1.5rem; /* Alineado con el texto cuando hay icono */
+  letter-spacing: 0.5px;
+}
+
+/* ── Navigation ──────────────────────────────────────────────── */
+.nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* ── Section Dividers & Headers ──────────────────────────────── */
+.sectionGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 0.5rem 0.35rem;
+  user-select: none;
+}
+
+.sectionGroup:first-child .sectionHeader {
+  padding-top: 0.2rem;
+}
+
+.sectionDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(163, 230, 53, 0.4);
+}
+
+.sectionTitle {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: var(--color-texto-sidebar-muted);
+  /* color: #fff; */
+  white-space: nowrap;
+}
+
+.sectionLine {
+  flex: 1;
+  height: 1px;
+  background: var(--color-borde-suave);
+  opacity: 0.6;
+}
+
+.sectionDividerCollapsed {
+  height: 1px;
+  background: var(--color-borde-suave);
+  margin: 0.6rem 0.5rem;
+  border: none;
+  opacity: 0.6;
+}
+
+.nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+.nav::-webkit-scrollbar-thumb {
+  background: var(--color-hover-overlay);
+  border-radius: 4px;
+}
+
+.menuItem {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Línea vertical conectora para items con hijos */
+.menuItem:has(.menuChildren) {
+  position: relative;
+}
+
+.menuItem:has(.menuChildren)::before {
+  display: none;
+}
+
+/* Líneas conectoras para items hijos (estilo árbol curvo) */
+.menuChildren .menuItem {
+  position: relative;
+}
+
+.menuChildren .menuItem::before,
+.menuChildren .menuItem::after {
+  content: "";
+  position: absolute;
+  left: 24px; /* Centro del icono del padre */
+  border-left: 2px solid var(--color-borde-divisor, #666666);
+  z-index: 0;
+}
+
+/* Curva para cada hijo */
+.menuChildren .menuItem::before {
+  top: -2px; /* Cubrir espacio (gap) */
+  height: calc(50% + 2px); /* Hasta la mitad del item */
+  width: 16px; /* Ancho de la rama horizontal */
+  border-bottom: 2px solid var(--color-borde-divisor, #666666);
+  border-bottom-left-radius: 12px; /* Curvatura suave */
+}
+
+/* El primer hijo necesita una línea más larga hacia arriba para conectar con el padre */
+.menuChildren .menuItem:first-child::before {
+  top: -12px;
+  height: calc(50% + 12px);
+}
+
+/* Línea vertical continua hacia el siguiente hijo (excepto el último) */
+.menuChildren .menuItem:not(:last-child)::after {
+  top: 20%;
+  bottom: -2px; /* Conectar con el ::before del siguiente hijo */
+}
+
+.menuHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 0.7rem 1rem;
+  border-radius: 10px;
+  color: var(--color-texto-sidebar-muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+  position: relative;
+  z-index: 1; /* Para estar sobre las líneas */
+}
+
+/* Estilo para items hijos - estilo dashboard de la imagen */
+.menuChildren .menuHeader {
+  padding: 0.5rem 0.75rem !important;
+  font-size: 0.875rem;
+  font-weight: 400;
+  border-radius: 8px;
+  margin-left: 46px; /* Espacio para las líneas del árbol */
+  margin-right: 12px;
+  margin-bottom: 2px;
+  gap: 0;
+}
+
+.menuChildren .menuHeader:hover {
+ background: var(--color-hover-overlay, rgba(0, 0, 0, 0.06));
+  color: white;
+  /* color: var(--color-texto-sidebar); */
+}
+
+.menuHeader:hover {
+ background: var(--color-hover-overlay, rgba(0, 0, 0, 0.06));
+  color: white;
+}
+
+.menuHeaderActive {
+  color: var(--color-primario);
+  font-weight: 600;
+}
+
+.menuChildren .menuHeader.menuHeaderActive {
+  background: var(--color-hover-overlay, rgba(0, 0, 0, 0.06));
+  color: var(--color-primario);
+  font-weight: 500;
+}
+
+.menuIcon {
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: color 0.25s ease;
+}
+
+.menuHeaderActive .menuIcon {
+  color: var(--color-primario);
+}
+
+.menuText {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 0.2px;
+  
+}
+
+/* Texto de items hijos más pequeño */
+.menuChildren .menuText {
+  font-size: 0.85rem;
+}
+
+.menuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* color: var(--color-texto-secundario); */
+  color: #fff;
+}
+
+.menuToggleOpen {
+  transform: rotate(180deg);
+}
+
+.menuChildren {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 2px;
+  margin-left: 0;
+  overflow: hidden;
+  position: relative;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+
+/* Ajustes menú en estado colapsado para centrar iconos */
+.sidebarCollapsed .nav {
+  padding: 0 0.75rem;
+}
+
+.sidebarCollapsed .menuHeader {
+  justify-content: center;
+  padding: 0.8rem 0;
+  gap: 0;
+}
+
+.sidebarCollapsed .menuChildren {
+  display: none;
+}
+
+/* ── Footer / User ───────────────────────────────────────────── */
+.footer {
+  padding: 1rem 1rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.sidebarCollapsed .footer {
+  padding: 1.5rem 0.75rem;
+}
+
+/* ── Logout button (UX Premium & High-End) ─────────────────────── */
+.logoutBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  padding: 0.55rem 0.75rem;
+  min-height: 44px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  color: var(--color-texto-sidebar-muted, #94a3b8);
+  font-size: 0.88rem;
+  font-weight: 500;
+  font-family: inherit;
+  letter-spacing: 0.15px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.22s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.18s ease;
+}
+
+.logoutIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--color-texto-sidebar-muted, #94a3b8);
+  flex-shrink: 0;
+  transition:
+    background 0.22s ease,
+    color 0.22s ease,
+    transform 0.22s ease;
+}
+
+.logoutIcon {
+  font-size: 1.05rem;
+  transition: transform 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoutLabel {
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.22s ease;
+}
+
+/* Hover State */
+.logoutBtn:hover {
+  background: rgba(239, 68, 68, 0.10);
+  border-color: rgba(239, 68, 68, 0.28);
+  color: #fca5a5;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.14);
+  transform: translateY(-1px);
+}
+
+.logoutBtn:hover .logoutIconWrapper {
+  background: rgba(239, 68, 68, 0.20);
+  color: #ef4444;
+}
+
+.logoutBtn:hover .logoutIcon {
+  transform: translateX(2.5px);
+}
+
+/* Active State */
+.logoutBtn:active {
+  transform: translateY(0) scale(0.985);
+  background: rgba(239, 68, 68, 0.16);
+  box-shadow: none;
+}
+
+/* Focus State */
+.logoutBtn:focus-visible {
+  outline: none;
+  border-color: rgba(239, 68, 68, 0.5);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* Collapsed Sidebar State */
+.sidebarCollapsed .logoutBtn {
+  justify-content: center;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+.sidebarCollapsed .logoutBtn .logoutIconWrapper {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.sidebarCollapsed .logoutBtn:hover .logoutIconWrapper {
+  background: transparent;
+  color: #ef4444;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    height: 100dvh;
+    z-index: 1000;
+    transform: translateX(-105%);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+    box-shadow: var(--sombra-modal);
+    border-radius: 0 20px 20px 0;
+    width: var(--sidebar-width, 260px) !important;
+  }
+
+  .sidebar:not(.sidebarCollapsed) {
+    transform: translateX(0);
+  }
+}
+

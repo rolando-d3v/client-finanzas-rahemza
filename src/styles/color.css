@@ -1,0 +1,250 @@
+/*
+ * ============================================================
+ *  LMS DESIGN SYSTEM — TOKENS Y VARIABLES DE COLOR
+ * ============================================================
+ */
+
+/* ── Activar soporte nativo de color-scheme ── */
+html {
+  color-scheme: light dark;
+}
+
+/* ── Overrides manuales por atributo ── */
+[data-theme="light"] {
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+:root {
+  /* ============================================================
+   *  0. SISTEMA DE COLORES BASE (Migrados del objeto Color)
+   * ============================================================ */
+
+  /* Colores principales */
+  --primary_color: #a3e635;
+  --secondary_color: #05ca79;
+  --tertiary_color: #0c180e;
+  --cuaternary_color: #1a3a2a;
+  /* --cuaternary-color: #05ca79; */
+  --verde-oscuro: #1a3a2a;
+
+  --verde: #2d6a4f;
+
+  /* Fondos (Modo Claro) */
+  --background: #ffffff;
+  --surface: #f0f2f5;
+  --card: #ffffff;
+
+  /* Textos (Modo Claro) */
+  --text_primary: #111b21;
+  --text-primary: #111b21;
+  --text_secondary: #3b4a54;
+  --text-secondary: #3b4a54;
+  --text_muted: #667781;
+  --text-muted: #667781;
+
+  /* Acentos */
+  --accent_purple: #bb86fc;
+  --accent-purple: #bb86fc;
+  --accent_red: #ff5252;
+  --accent-red: #ff5252;
+  --accent_blue: #0095f6;
+  --accent-blue: #0095f6;
+
+  /* Bordes y utilidades */
+  --border: #e9edef;
+  --overlay: rgba(0, 0, 0, 0.5);
+  --overlay_dark: rgba(0, 0, 0, 0.9);
+  --overlay-dark: rgba(0, 0, 0, 0.9);
+  --transparent: transparent;
+
+  /* Chat específicos (Modo Claro) */
+  --chat_bg: #efeae2;
+  --chat-bg: #efeae2;
+  --chat_bubble_sent: #d9fdd3;
+  --chat-bubble-sent: #d9fdd3;
+  --chat_bubble_received: #ffffff;
+  --chat-bubble-received: #ffffff;
+  --chat_input_bg: #ffffff;
+  --chat-input-bg: #ffffff;
+  --chat_mic_btn: #00a884;
+  --chat-mic-btn: #00a884;
+  --chat_header: #f0f2f5;
+  --chat-header: #f0f2f5;
+  --chat_recording: #ef3c3c;
+  --chat-recording: #ef3c3c;
+
+  /* ============================================================
+   *  1. FONDOS Y SUPERFICIES (Adaptativo Light / Dark)
+   * ============================================================ */
+
+  --color-body-app: light-dark(#a8c678, #0a0a0d);
+  --color-border-app: light-dark(#000, #22222a);
+  --color-fondo-app: light-dark(#f0f2f5, #0a0a0d);
+  --color-fondo-sidebar: light-dark(#ffffff, #0a0a0d);
+  --color-fondo-sidebar-activo: light-dark(#f0f2f5, #16161d);
+
+  /* Color para lista de opciones */
+  --color-fondo-opcion-hover: light-dark(#f0f2f5, #1a1a24);
+  --color-texto-opcion-hover: light-dark(#111b21, #f0f2f5);
+
+  /* Color para tarjetas y superficies */
+  --color-fondo-card: light-dark(#ffffff, #16161d);
+  --color-fondo-elevado: light-dark(#ffffff, #1f1f28);
+  --color-fondo-input: light-dark(#ffffff, #1a1a24);
+  --color-fondo-overlay: light-dark(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9));
+  --color-fondo-activo: light-dark(rgba(163, 230, 53, 0.15), rgba(163, 230, 53, 0.2));
+  --color-fondo-hover: light-dark(rgba(163, 230, 53, 0.08), rgba(163, 230, 53, 0.12));
+  --color-fondo-skeleton: light-dark(#e9edef, #1a1a24);
+
+  /* ============================================================
+   *  2. TEXTOS Y TIPOGRAFÍA
+   * ============================================================ */
+
+  --color-texto-heading: light-dark(#111b21, #f0f2f5);
+  --color-texto-body: light-dark(#111b21, #e9edef);
+  --color-texto-secundario: light-dark(#3b4a54, #a0aec0);
+  --color-texto-placeholder: light-dark(#667781, #718096);
+  --color-texto-sidebar: light-dark(#111b21, #e9edef);
+  --color-texto-sidebar-muted: light-dark(#667781, #a0aec0);
+  --color-texto-disabled: light-dark(#667781, #4a5568);
+  --color-texto-link: light-dark(#2d6a4f, #a3e635);
+  --color-texto-link-hover: light-dark(#05ca79, #bbf059);
+
+  /* ============================================================
+   *  3. COLORES PRINCIPALES
+   * ============================================================ */
+
+  --color-primario: light-dark(#a3e635, #a3e635);
+  --color-primario-hover: light-dark(#8ecf2b, #b5f053);
+  --color-primario-activo: light-dark(#79b522, #8ecf2b);
+  --color-primario-suave: light-dark(rgba(163, 230, 53, 0.2), rgba(163, 230, 53, 0.25));
+  --color-primario-muysuave: light-dark(rgba(163, 230, 53, 0.1), rgba(163, 230, 53, 0.15));
+  --color-primario-texto: light-dark(#111b21, #ffffff);
+
+  --color-secundario: light-dark(#05ca79, #05ca79);
+  --color-terciario: light-dark(#05ca79, #05ca79);
+  --color-cuaternario: light-dark(#05ca79, #05ca79);
+  --color-azul-oscuro: light-dark(#0a0a0d, #0a0a0d);
+  --color-verde: light-dark(#2d6a4f, #2d6a4f);
+
+  /* ============================================================
+   *  4. PROGRESO
+   * ============================================================ */
+
+  --color-progreso: light-dark(#05ca79, #05ca79);
+  --color-progreso-hover: light-dark(#04a362, #05ca79);
+  --color-progreso-suave: light-dark(rgba(5, 202, 121, 0.15), rgba(5, 202, 121, 0.2));
+
+  /* ============================================================
+   *  5. GAMIFICACIÓN
+   * ============================================================ */
+
+  --color-gamificacion: light-dark(#a3e635, #a3e635);
+  --color-gamificacion-suave: light-dark(rgba(163, 230, 53, 0.15), rgba(163, 230, 53, 0.2));
+
+  /* ============================================================
+   *  6. BORDES Y SOMBRAS
+   * ============================================================ */
+
+  --color-borde: light-dark(#e9edef, #2d3748);
+  --color-borde-suave: light-dark(#e9edef, #1a202c);
+  --color-borde-focus: light-dark(#a3e635, #a3e635);
+  --color-borde-activo: light-dark(#05ca79, #05ca79);
+  --color-borde-error: light-dark(#ff5252, #ff5252);
+
+  --sombra-card: light-dark(
+    0 1px 4px rgba(10, 10, 13, 0.07),
+    0 4px 16px rgba(10, 10, 13, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.3)
+  );
+  --sombra-modal: light-dark(0 8px 40px rgba(10, 10, 13, 0.18), 0 8px 40px rgba(0, 0, 0, 0.5));
+  --sombra-dropdown: light-dark(0 4px 20px rgba(10, 10, 13, 0.12), 0 4px 20px rgba(0, 0, 0, 0.4));
+  --focus-ring: light-dark(0 0 0 3px rgba(163, 230, 53, 0.4), 0 0 0 3px rgba(163, 230, 53, 0.4));
+
+  /* ============================================================
+   *  7. ESTADOS SEMÁNTICOS
+   * ============================================================ */
+
+  /* Éxito */
+  --color-exito: light-dark(#05ca79, #05ca79);
+  --color-exito-fondo: light-dark(rgba(5, 202, 121, 0.15), rgba(5, 202, 121, 0.2));
+  --color-exito-borde: light-dark(#05ca79, #05ca79);
+  --color-exito-texto: light-dark(#05ca79, #05ca79);
+
+  /* Advertencia */
+  --color-advertencia: light-dark(#f59e0b, #fbbf24);
+  --color-advertencia-fondo: light-dark(#fff4e5, rgba(245, 158, 11, 0.15));
+  --color-advertencia-borde: light-dark(#ffd48a, rgba(251, 191, 36, 0.3));
+  --color-advertencia-texto: light-dark(#8a5200, #fde68a);
+
+  /* Error */
+  --color-error: light-dark(#ff5252, #ff5252);
+  --color-error-fondo: light-dark(rgba(255, 82, 82, 0.15), rgba(255, 82, 82, 0.2));
+  --color-error-borde: light-dark(#ff5252, #ff5252);
+  --color-error-texto: light-dark(#ff5252, #ff5252);
+
+  /* Info */
+  --color-info: light-dark(#0095f6, #0095f6);
+  --color-info-fondo: light-dark(rgba(0, 149, 246, 0.15), rgba(0, 149, 246, 0.2));
+  --color-info-borde: light-dark(#0095f6, #0095f6);
+  --color-info-texto: light-dark(#0095f6, #0095f6);
+
+  /* ============================================================
+   *  8. INDICADORES FUNCIONALES Y CHAT
+   * ============================================================ */
+
+  --color-online: light-dark(#05ca79, #05ca79);
+  --color-ausente: light-dark(#f59e0b, #fbbf24);
+  --color-offline: light-dark(#667781, #667781);
+  --color-badge: light-dark(#a3e635, #a3e635);
+  --color-badge-texto: light-dark(#111b21, #111b21);
+
+  --color-barra-progreso: light-dark(#05ca79, #05ca79);
+  --color-barra-progreso-fondo: light-dark(rgba(5, 202, 121, 0.15), rgba(5, 202, 121, 0.2));
+
+  --color-estrella: light-dark(#f59e0b, #fbbf24);
+
+  --color-tag-fondo: light-dark(#f0f2f5, #1a1a24);
+  --color-tag-texto: light-dark(#111b21, #f0f2f5);
+  --color-tag-borde: light-dark(#e9edef, rgba(255, 255, 255, 0.15));
+
+  /* ============================================================
+   *  9. INTERACCIÓN
+   * ============================================================ */
+
+  --color-hover-overlay: light-dark(rgba(163, 230, 53, 0.08), rgba(163, 230, 53, 0.14));
+  --color-pressed-overlay: light-dark(rgba(163, 230, 53, 0.16), rgba(163, 230, 53, 0.24));
+  --color-seleccion: light-dark(rgba(163, 230, 53, 0.35), rgba(163, 230, 53, 0.4));
+
+  --color-disabled-fondo: light-dark(#f0f2f5, #1a1a24);
+  --color-disabled-texto: light-dark(#667781, #4a5568);
+  --color-disabled-borde: light-dark(#e9edef, #2d3748);
+
+  /* ============================================================
+   *  10. GAMIFICACIÓN — RANGOS
+   * ============================================================ */
+
+  --color-rango-bronce: light-dark(#cd7f32, #e09d58);
+  --color-rango-bronce-fondo: light-dark(#fdf1e4, rgba(205, 127, 50, 0.15));
+
+  --color-rango-plata: light-dark(#a0aab4, #c8d0d8);
+  --color-rango-plata-fondo: light-dark(#f2f4f6, rgba(160, 170, 180, 0.12));
+
+  --color-rango-oro: light-dark(#f59e0b, #fbbf24);
+  --color-rango-oro-fondo: light-dark(#fff4e5, rgba(245, 158, 11, 0.15));
+
+  --color-rango-diamante: light-dark(#a3e635, #a3e635);
+  --color-rango-diamante-fondo: light-dark(rgba(163, 230, 53, 0.15), rgba(163, 230, 53, 0.2));
+
+  --color-xp: light-dark(#05ca79, #05ca79);
+  --color-xp-fondo: light-dark(rgba(5, 202, 121, 0.15), rgba(5, 202, 121, 0.2));
+
+  /* ============================================================
+   *  10. BOTONES
+   * ============================================================ */
+  --color-bg-boton: light-dark(#a3e635, #a3e635);
+  --color-texto-boton: light-dark(#111b21, #111b21);
+}

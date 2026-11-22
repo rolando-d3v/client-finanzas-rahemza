@@ -1,0 +1,485 @@
+@import "../../../../../styles/color.css";
+
+/* ── Container ──────────────────────────────────── */
+.container {
+  border-radius: 12px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--color-borde-suave);
+  background-color: var(--color-fondo-card);
+  min-width: 0;
+  width: 100%;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 16px;
+  height: 44px;
+  background-color: var(--color-fondo-input);
+  border-bottom: 1px solid var(--color-borde-suave);
+  min-width: 0;
+}
+
+.headerIndent {
+  width: 44px;
+  flex-shrink: 0;
+}
+
+.headerCell {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 0 8px;
+  box-sizing: border-box;
+}
+
+/* ── Body ───────────────────────────────────────── */
+.body {
+  background-color: var(--color-fondo-card);
+}
+
+/* ── Row ────────────────────────────────────────── */
+.row {
+  --depth-indent: 28px;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 16px;
+  min-height: 48px;
+  border-bottom: 1px solid var(--color-borde-suave);
+  transition: background-color 0.15s ease;
+  cursor: default;
+  min-width: 0;
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.row:hover {
+  background-color: var(--color-fondo-hover);
+}
+
+.rootRow {
+  font-weight: 500;
+}
+
+/* ── Indent + Toggle ────────────────────────────── */
+.indentArea {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  min-width: 44px;
+  box-sizing: content-box;
+  padding-left: calc(var(--depth-indent) * var(--depth, 0));
+  transition: padding-left 0.2s ease;
+}
+
+.toggleBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--color-texto-secundario);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.toggleBtn:hover {
+  background-color: var(--color-primario-muysuave);
+  color: var(--color-primario);
+}
+
+.leafSpacer {
+  display: inline-block;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+/* ── Name Cell ──────────────────────────────────── */
+.nameCell {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.icon {
+  font-size: 18px;
+  flex-shrink: 0;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+}
+
+.colorDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--color-borde-suave);
+}
+
+.name {
+  font-size: 14px;
+  color: var(--color-texto-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.childCount {
+  font-size: 12px;
+  color: var(--color-texto-secundario);
+  font-weight: 400;
+  flex-shrink: 0;
+}
+
+/* ── Tipo Cell ──────────────────────────────────── */
+.tipoCell {
+  flex: 1;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+/* ── Color Cell ─────────────────────────────────── */
+.colorCell {
+  flex: 0.8;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.colorHex {
+  font-size: 13px;
+  color: var(--color-texto-secundario);
+  font-family: monospace;
+}
+
+/* ── Actions Cell ───────────────────────────────── */
+.actionsCell {
+  flex: 0.8;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+  min-width: 110px;
+}
+
+.actionsHeaderLabel {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.addParentBtn {
+  height: 24px;
+  width: 24px;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  color: var(--color-primario);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  padding: 0;
+  margin-left: 8px;
+}
+
+.addParentBtn:hover {
+  background-color: var(--color-primario-muysuave);
+  transform: scale(1.05);
+}
+
+.actionBtn {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--color-texto-secundario);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.actionBtn:hover {
+  background-color: var(--color-fondo-hover);
+  color: var(--color-primario);
+}
+
+.deleteBtn:hover {
+  background-color: var(--color-error-fondo);
+  color: var(--color-error);
+}
+
+/* ── System category styles ────────────────────── */
+.systemRow {
+  background-color: var(--color-fondo-input);
+}
+
+.systemRow:hover {
+  background-color: var(--color-fondo-input);
+}
+
+.systemBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  background-color: var(--color-primario-muysuave);
+  color: var(--color-primario);
+  border: 1px solid var(--color-primario-suave);
+  flex-shrink: 0;
+  user-select: none;
+}
+
+.systemLock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: var(--color-texto-placeholder);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+
+/* ── Children container ─────────────────────────── */
+.childrenContainer {
+  position: relative;
+}
+
+.childrenContainer::before {
+  content: "";
+  position: absolute;
+  left: calc(16px + (var(--depth-indent, 28px) * var(--depth, 0)) + 12px);
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background-color: var(--color-borde-suave);
+}
+
+/* ── Skeleton loading ───────────────────────────── */
+.skeletonRow {
+  display: flex;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.skeletonBar {
+  height: 14px;
+  border-radius: 6px;
+  background: var(--color-fondo-skeleton);
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+/* ── Responsive < 1024px ────────────────────────── */
+@media (max-width: 1024px) {
+  .row {
+    --depth-indent: 20px;
+    padding: 0 12px;
+  }
+
+  .header {
+    padding: 0 12px;
+  }
+
+  .headerIndent,
+  .indentArea {
+    width: 36px;
+    min-width: 36px;
+  }
+
+  .colorCell {
+    display: none;
+  }
+
+  .nameCell {
+    flex: 2.2;
+  }
+
+  .tipoCell {
+    flex: 0.9;
+  }
+
+  .actionsCell {
+    flex: 0.9;
+    min-width: 100px;
+  }
+
+  .childrenContainer::before {
+    left: calc(12px + (20px * var(--depth, 0)) + 11px);
+  }
+}
+
+/* ── Responsive < 768px (Mobile & Tablets pequeñas) */
+@media (max-width: 768px) {
+  .row {
+    --depth-indent: 16px;
+    padding: 0 8px;
+    min-height: 44px;
+  }
+
+  .header {
+    padding: 0 8px;
+    height: 40px;
+  }
+
+  .headerIndent,
+  .indentArea {
+    width: 28px;
+    min-width: 28px;
+  }
+
+  .nameCell {
+    flex: 2;
+    gap: 6px;
+    padding: 0 4px;
+  }
+
+  .name {
+    font-size: 13.5px;
+  }
+
+  .icon {
+    font-size: 16px;
+  }
+
+  .colorDot {
+    width: 10px;
+    height: 10px;
+  }
+
+  .systemBadge {
+    padding: 2px 5px;
+    font-size: 10px;
+    gap: 2px;
+  }
+
+  .tipoCell {
+    flex: 0.8;
+    padding: 0 4px;
+  }
+
+  .actionsCell {
+    flex: 0.8;
+    min-width: 92px;
+    gap: 4px;
+    padding: 0 4px;
+  }
+
+  .actionBtn {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
+  }
+
+  .systemLock {
+    width: 28px;
+    height: 28px;
+  }
+
+  .childrenContainer::before {
+    left: calc(8px + (16px * var(--depth, 0)) + 9px);
+  }
+}
+
+/* ── Responsive < 520px (Móvil Pequeño) ──────────── */
+@media (max-width: 520px) {
+  .row {
+    --depth-indent: 12px;
+    padding: 0 6px;
+  }
+
+  .header {
+    padding: 0 6px;
+  }
+
+  .headerIndent,
+  .indentArea {
+    width: 24px;
+    min-width: 24px;
+  }
+
+  .toggleBtn {
+    width: 20px;
+    height: 20px;
+  }
+
+  .leafSpacer {
+    width: 20px;
+  }
+
+  .nameCell {
+    gap: 4px;
+  }
+
+  .name {
+    font-size: 13px;
+  }
+
+  .systemBadgeText {
+    display: none;
+  }
+
+  .systemBadge {
+    padding: 2px 4px;
+  }
+
+  .tipoCell {
+    flex: 0.7;
+  }
+
+  .actionsCell {
+    min-width: 82px;
+    gap: 2px;
+  }
+
+  .actionBtn {
+    width: 26px;
+    height: 26px;
+  }
+
+  .systemLock {
+    width: 26px;
+    height: 26px;
+  }
+
+  .childrenContainer::before {
+    left: calc(6px + (12px * var(--depth, 0)) + 8px);
+  }
+}

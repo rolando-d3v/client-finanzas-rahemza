@@ -1,0 +1,498 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* Estado cuando se hace scroll */
+.headerScrolled {
+
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  /* background-color: rgba(255, 255, 255, 0.95); */
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  /* backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.logoBadge {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111b21;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 12px rgba(163, 230, 53, 0.25);
+
+  .img_logo {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+/* El nombre por defecto (arriba) es BLANCO para contrastar con la imagen */
+.brandName {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+/* Cuando se hace scroll, se vuelve OSCURO */
+.headerScrolled .brandName {
+  color: #111b21;
+}
+
+.tagLive {
+  font-size: 0.65rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  background: rgba(163, 230, 53, 0.15);
+  color: #a3e635; /* Un verde más brillante para fondo oscuro */
+  border: 1px solid rgba(163, 230, 53, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+.headerScrolled .tagLive {
+  color: #5c8b18; /* Verde oscuro para fondo blanco */
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  position: relative;
+}
+
+/* Links por defecto (arriba) son BLANCOS/Grises Claros */
+.navLink {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem 0.2rem;
+  transition: color 0.2s ease;
+}
+
+.navLink:hover {
+  color: #ffffff;
+}
+
+.navLinkActive {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+/* Links con scroll son OSCUROS */
+.headerScrolled .navLink {
+  color: #667781;
+}
+
+.headerScrolled .navLink:hover {
+  color: #111b21;
+}
+
+.headerScrolled .navLinkActive {
+  color: #111b21;
+}
+
+.navLinkActive::after {
+  content: '';
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--color-bg-boton, #a3e635);
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Botón secundario por defecto (arriba) es BLANCO transparente */
+.btnSecondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transition: all 0.2s ease;
+}
+
+.btnSecondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Botón secundario con scroll es OSCURO transparente */
+.headerScrolled .btnSecondary {
+  background: transparent;
+  color: #3b4a54;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.headerScrolled .btnSecondary:hover {
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.3);
+  color: #111b21;
+}
+
+.btnPrimary {
+  background-color: var(--color-bg-boton, #a3e635);
+  color: var(--color-texto-boton, #111b21);
+  border: none;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 15px rgba(163, 230, 53, 0.3);
+}
+
+.btnPrimary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(163, 230, 53, 0.4);
+  filter: brightness(0.95);
+}
+
+.btnPrimary:active {
+  transform: translateY(0);
+}
+
+/* ─── Controles Móviles (Top Bar) ───────────────────────── */
+.mobileControls {
+  display: none;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.mobileBarLogin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.headerScrolled .mobileBarLogin {
+  color: #111b21;
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.mobileBarLogin:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.headerScrolled .mobileBarLogin:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.mobileBarLogin:active {
+  transform: scale(0.96);
+}
+
+.mobileBarLoginIcon {
+  font-size: 0.95rem;
+}
+
+.mobileBarLoginText {
+  letter-spacing: 0.01em;
+}
+
+.mobileMenuBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  color: #ffffff;
+  font-size: 1.35rem;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+}
+
+.headerScrolled .mobileMenuBtn {
+  color: #111b21;
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.mobileMenuBtn:active {
+  transform: scale(0.95);
+}
+
+/* Cuando el drawer está abierto, asegurar contraste en la cabecera */
+.headerMobileActive {
+  background: rgba(15, 23, 42, 0.96) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.headerMobileActive .brandName {
+  color: #ffffff !important;
+}
+
+.headerMobileActive .mobileMenuBtn {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.headerMobileActive .mobileBarLogin {
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ─── Drawer Móvil Glassmórfico ──────────────────────────── */
+.mobileDrawer {
+  display: flex;
+  flex-direction: column;
+  background: rgba(15, 23, 42, 0.98);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1.25rem 1.5rem 1.75rem;
+  gap: 1rem;
+  max-height: calc(100vh - 72px);
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+  animation: slideDrawer 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideDrawer {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileNavContainer {
+  width: 100%;
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobileNavItem {
+  width: 100%;
+}
+
+.mobileNavLink {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  font-weight: 500;
+  text-decoration: none;
+  background: transparent;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.mobileNavLink:hover,
+.mobileNavLinkActive {
+  color: #ffffff;
+  background: rgba(163, 230, 53, 0.12);
+  border-color: rgba(163, 230, 53, 0.3);
+}
+
+.mobileNavLinkActive {
+  font-weight: 700;
+}
+
+.mobileLinkArrow {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.mobileNavLink:hover .mobileLinkArrow,
+.mobileNavLinkActive .mobileLinkArrow {
+  transform: translateX(3px);
+  color: var(--color-bg-boton, #a3e635);
+}
+
+.mobileDrawerDivider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.08);
+  margin: 0.25rem 0;
+}
+
+/* ─── Acciones en Drawer y Desktop ───────────────────────── */
+.actionLink {
+  text-decoration: none;
+  display: block;
+  width: 100%;
+}
+
+.drawerActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.btnDrawerSecondary {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.8rem 1.25rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.btnDrawerSecondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.btnDrawerSecondary:active {
+  transform: scale(0.98);
+}
+
+.drawerActions .btnPrimary {
+  width: 100%;
+  justify-content: center;
+  padding: 0.8rem 1.25rem;
+  border-radius: 10px;
+}
+
+/* ─── Backdrop Overlay ───────────────────────────────────── */
+.mobileBackdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 999;
+  animation: fadeIn 0.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ─── Responsive Media Queries ───────────────────────────── */
+@media (max-width: 900px) {
+  .desktopNav,
+  .actions {
+    display: none !important;
+  }
+
+  .mobileControls {
+    display: flex;
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding: 0.85rem 1rem;
+  }
+
+  .brandName {
+    font-size: 1.15rem;
+  }
+
+  .tagLive {
+    display: none;
+  }
+
+  .mobileBarLogin {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.78rem;
+  }
+}

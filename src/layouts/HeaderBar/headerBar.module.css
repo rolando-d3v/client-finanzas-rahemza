@@ -1,0 +1,286 @@
+/* ═══════════════════════════════════════════════════════════════
+   TOPBAR
+   ═══════════════════════════════════════════════════════════════ */
+.headerBar {
+  position: sticky;
+  top: 0;
+  /* width: 100%; */
+  
+
+  display: flex;
+  justify-content: space-between;
+  left: var(--sidebar-width, 260px);
+  height: var(--topbar-height, 60px);
+  background: var(--color-fondo-card);
+  border-bottom: 1px solid var(--color-borde);
+  display: flex;
+  align-items: center;
+  padding: 0 1.5rem;
+  z-index: 90;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 6px;
+  margin-left: 16px;
+  margin-right: 0px;
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-texto-heading);
+  font-size: 1.25rem;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.menuBtn:hover {
+  background: var(--color-fondo-hover);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconBtn {
+  position: relative;
+  background: none;
+  border: none;
+  color: var(--color-texto-secundario);
+  font-size: 1.15rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  display: flex;
+  transition: all 0.2s;
+}
+
+.iconBtn:hover {
+  color: var(--color-texto-heading);
+  background: var(--color-fondo-hover);
+}
+
+.badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  min-width: 16px;
+  height: 16px;
+  background: var(--color-error);
+  color: var(--color-badge-texto);
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+/* ── User dropdown ───────────────────────────────────────────── */
+.userMenu {
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+.userBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 8px 4px 4px;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.userBtn:hover {
+  background: var(--color-fondo-hover);
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--color-primario), var(--color-primario-suave));
+  color: var(--color-badge-texto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.userName {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--color-texto-body);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background: var(--color-fondo-elevado);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  box-shadow: var(--sombra-dropdown);
+  padding: 0.5rem;
+  animation: dropdownIn 0.15s ease;
+  z-index: 200;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dropdownHeader {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.dropdownHeader strong {
+  font-size: 0.88rem;
+  color: var(--color-texto-heading);
+}
+
+.dropdownHeader small {
+  font-size: 0.75rem;
+  color: var(--color-texto-secundario);
+  text-transform: capitalize;
+}
+
+.dropdownDivider {
+  border: none;
+  border-top: 1px solid var(--color-borde);
+  margin: 0.25rem 0.5rem;
+}
+
+.dropdownItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border: none;
+  background: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  color: var(--color-texto-heading);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.dropdownItem:hover {
+  background: var(--color-fondo-hover);
+}
+
+.dropdownItemDanger {
+  color: var(--color-error);
+}
+
+.dropdownItemDanger:hover {
+  background: var(--color-error-fondo);
+}
+
+/* ── User Info Dropdown Item ─────────────────────────────────── */
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  text-decoration: none;
+  border-radius: 8px;
+  color: var(--color-texto-heading);
+  transition: all 0.2s ease;
+}
+
+.userInfo:hover {
+  background: var(--color-fondo-hover);
+}
+
+.userAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primario-suave);
+  color: var(--color-primario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.avatarImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.userText {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.userNameText {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.userEmail {
+  font-size: 0.72rem;
+  color: var(--color-texto-secundario);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ── Selector Empresa ────────────────────────────────────────── */
+.empresaSelector {
+  margin-left: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .headerBar {
+    left: 0 !important;
+    padding: 0 1rem;
+    margin-left: 0px;
+  }
+
+  .menuBtn {
+    display: flex;
+  }
+
+  .userName {
+    display: none;
+  }
+}
+

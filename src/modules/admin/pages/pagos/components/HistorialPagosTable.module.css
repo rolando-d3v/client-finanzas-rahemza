@@ -1,0 +1,367 @@
+/* ── Historial de Pagos (sub_pagos) ────────────────────────── */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.titleGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+}
+
+.countBadge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: var(--color-fondo-activo);
+  color: var(--color-texto-body);
+  border: 1px solid var(--color-borde-activo);
+}
+
+.tableCard {
+  background: var(--color-fondo-card);
+  border: 1px solid var(--color-borde);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--sombra-card);
+}
+
+.tableResponsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 13.5px;
+}
+
+.table th {
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-texto-secundario);
+  background: var(--color-fondo-input);
+  border-bottom: 1px solid var(--color-borde);
+  white-space: nowrap;
+}
+
+.table td {
+  padding: 14px 16px;
+  color: var(--color-texto-body);
+  border-bottom: 1px solid var(--color-borde-suave);
+  vertical-align: middle;
+}
+
+.table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.table tbody tr:hover {
+  background: var(--color-fondo-hover);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ── Badges de Método de Pago ────────────────────────────── */
+.badgeMetodo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.metodoYape {
+  background: light-dark(#f3e8ff, rgba(147, 51, 234, 0.2));
+  color: light-dark(#742284, #d8b4fe);
+  border: 1px solid light-dark(#e9d5ff, rgba(147, 51, 234, 0.4));
+}
+
+.metodoPlin {
+  background: light-dark(#e0f7fa, rgba(0, 184, 212, 0.2));
+  color: light-dark(#00838f, #80deea);
+  border: 1px solid light-dark(#b2ebf2, rgba(0, 184, 212, 0.4));
+}
+
+.metodoTransferencia {
+  background: var(--color-info-fondo);
+  color: var(--color-info-texto);
+  border: 1px solid var(--color-info-borde);
+}
+
+.metodoEfectivo {
+  background: var(--color-exito-fondo);
+  color: var(--color-exito-texto);
+  border: 1px solid var(--color-exito-borde);
+}
+
+.metodoOtro {
+  background: var(--color-tag-fondo);
+  color: var(--color-tag-texto);
+  border: 1px solid var(--color-tag-borde);
+}
+
+/* ── Badges de Estado y Plan ─────────────────────────────── */
+.badgePlan {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--color-fondo-activo);
+  color: var(--color-texto-heading);
+  border: 1px solid var(--color-borde-activo);
+}
+
+.badgeCiclo {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 500;
+  background: var(--color-fondo-input);
+  color: var(--color-texto-secundario);
+  border: 1px solid var(--color-borde);
+}
+
+.badgeEstado {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  background: var(--color-exito-fondo);
+  color: var(--color-exito-texto);
+}
+
+.montoHighlight {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--color-texto-heading);
+}
+
+/* ── Botón de Recibo ─────────────────────────────────────── */
+.btnRecibo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--color-borde);
+  background: var(--color-fondo-card);
+  color: var(--color-texto-body);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnRecibo:hover {
+  background: var(--color-fondo-hover);
+  border-color: var(--color-borde-focus);
+  color: var(--color-texto-heading);
+  transform: translateY(-1px);
+}
+
+/* ── Recibo Modal Content ────────────────────────────────── */
+.reciboContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--color-texto-body);
+}
+
+.reciboHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--color-borde);
+}
+
+.reciboLogoSection h4 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-primario);
+  letter-spacing: -0.5px;
+}
+
+.reciboSubtitle {
+  margin: 0;
+  font-size: 12px;
+  color: var(--color-texto-secundario);
+}
+
+.reciboFolio {
+  text-align: right;
+}
+
+.reciboFolioLabel {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--color-texto-secundario);
+  font-weight: 600;
+}
+
+.reciboFolioNum {
+  font-family: monospace;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+}
+
+.reciboDetailsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  background: var(--color-fondo-input);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--color-borde);
+}
+
+.reciboDetailItem label {
+  display: block;
+  font-size: 11.5px;
+  color: var(--color-texto-secundario);
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.reciboDetailItem span {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.reciboAmountBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: var(--color-fondo-activo);
+  border: 1px solid var(--color-borde-activo);
+}
+
+.reciboAmountLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.reciboAmountValue {
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--color-secundario);
+}
+
+.reciboFooterNote {
+  margin: 0;
+  font-size: 11.5px;
+  color: var(--color-texto-secundario);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.reciboActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btnPrint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: var(--color-primario);
+  color: var(--color-primario-texto);
+  font-size: 13.5px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btnPrint:hover {
+  background: var(--color-primario-hover);
+  transform: translateY(-1px);
+}
+
+.btnClose {
+  padding: 10px 18px;
+  background: transparent;
+  color: var(--color-texto-secundario);
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.btnClose:hover {
+  background: var(--color-fondo-input);
+  color: var(--color-texto-heading);
+}
+
+/* ── Print Styles ────────────────────────────────────────── */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  .reciboContainer, .reciboContainer * {
+    visibility: visible;
+  }
+  .reciboContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 20px;
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .reciboActions {
+    display: none !important;
+  }
+}

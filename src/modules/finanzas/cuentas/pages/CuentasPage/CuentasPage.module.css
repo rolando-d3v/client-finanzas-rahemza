@@ -1,0 +1,300 @@
+
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 4px;
+}
+
+.pageHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.headerRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+@media screen and (max-width: 780px) {
+  .headerRow {
+    flex-direction: column;
+  }
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  margin: 0;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+/* ── Table Card ────────────────────────────────────── */
+.tableCard {
+  background-color: var(--color-fondo-card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde-suave);
+}
+
+.gridContainer {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ── AG Grid Theme Override ────────────────────────── */
+.gridContainer :global(.ag-root-wrapper) {
+  border: none;
+  font-family: var(--sans);
+}
+
+.gridContainer :global(.ag-header) {
+  background-color: var(--color-fondo-input);
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.gridContainer :global(.ag-header-cell-text) {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.gridContainer :global(.ag-row) {
+  border-color: var(--color-borde-suave);
+  font-size: 14px;
+  color: var(--color-texto-body);
+}
+
+.gridContainer :global(.ag-row:hover) {
+  background-color: var(--color-fondo-hover);
+}
+
+.gridContainer :global(.ag-cell) {
+  display: flex;
+  align-items: center;
+}
+
+.gridContainer :global(.ag-paging-panel) {
+  border-top: 1px solid var(--color-borde-suave);
+  color: var(--color-texto-secundario);
+  font-size: 13px;
+}
+
+/* ── Actions ───────────────────────────────────────── */
+.actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.actionBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: var(--color-texto-secundario);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.actionBtn:hover {
+  background-color: var(--color-fondo-hover);
+  color: var(--color-primario);
+}
+
+.deleteBtn:hover {
+  background-color: var(--color-error-fondo);
+  color: var(--color-error);
+}
+
+/* ── Buttons ───────────────────────────────────────── */
+.primaryBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: none;
+  background-color: var(--color-bg-boton);
+  color: var(--color-texto-boton);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.primaryBtn:hover {
+  background-color: var(--color-primario-hover);
+}
+
+.primaryBtn:active {
+  transform: scale(0.97);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondaryBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background: transparent;
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondaryBtn:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-primario);
+}
+
+/* ── Form ──────────────────────────────────────────── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.formInput {
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-input);
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.formInput:focus {
+  border-color: var(--color-borde-focus);
+  box-shadow: var(--focus-ring);
+}
+
+.formError {
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--color-texto-body);
+  cursor: pointer;
+  user-select: none;
+  margin-top: 4px;
+}
+
+.checkboxInput {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--color-primario);
+}
+
+/* ── Disabled / Blocked State ──────────────────────── */
+.disabledBtn {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+  pointer-events: none;
+}
+
+.disabledBtn:hover {
+  background-color: initial;
+  transform: none;
+}
+
+/* ── Upgrade Banner ────────────────────────────────── */
+.upgradeBanner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 193, 7, 0.08) 0%, rgba(255, 152, 0, 0.06) 100%);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  color: var(--color-texto-body);
+  font-size: 14px;
+  animation: fadeInBanner 0.3s ease-out;
+}
+
+.upgradeBanner strong {
+  color: var(--color-texto-heading);
+  font-size: 14px;
+}
+
+.upgradeBanner p {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  color: var(--color-texto-secundario);
+}
+
+.upgradeBannerIcon {
+  font-size: 20px;
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@keyframes fadeInBanner {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

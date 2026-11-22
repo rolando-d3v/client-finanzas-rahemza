@@ -1,0 +1,39 @@
+@import "../../../../../styles/color.css";
+
+.page { display: flex; flex-direction: column; gap: 24px; padding: 4px; }
+.pageHeader { display: flex; flex-direction: column; gap: 8px; }
+.pageTitle { font-size: 28px; font-weight: 700; color: var(--color-texto-heading); margin: 0; }
+.pageSubtitle { font-size: 14px; color: var(--color-texto-secundario); margin: 0; }
+
+.toolbar { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.filterSelect {
+  height: 40px; padding: 0 14px; border-radius: 12px; border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-input); color: var(--color-texto-body); font-size: 13px;
+  font-family: inherit; outline: none; cursor: pointer; transition: border-color 0.2s;
+}
+.filterSelect:focus { border-color: var(--color-borde-focus); }
+
+.tableCard {
+  background-color: var(--color-fondo-card); border-radius: 20px; padding: 24px;
+  box-shadow: var(--sombra-card); border: 1px solid var(--color-borde-suave);
+}
+.gridContainer { border-radius: 12px; overflow: hidden; }
+.gridContainer :global(.ag-root-wrapper) { border: none; font-family: inherit; }
+.gridContainer :global(.ag-header) { background-color: var(--color-fondo-input); border-bottom: 1px solid var(--color-borde-suave); }
+.gridContainer :global(.ag-header-cell-text) { font-size: 13px; font-weight: 600; color: var(--color-texto-secundario); text-transform: uppercase; letter-spacing: 0.3px; }
+.gridContainer :global(.ag-row) { border-color: var(--color-borde-suave); font-size: 14px; color: var(--color-texto-body); }
+.gridContainer :global(.ag-row:hover) { background-color: var(--color-fondo-hover); }
+.gridContainer :global(.ag-cell) { display: flex; align-items: center; }
+.gridContainer :global(.ag-paging-panel) { border-top: 1px solid var(--color-borde-suave); color: var(--color-texto-secundario); font-size: 13px; }
+
+.jsonCell { font-family: monospace; font-size: 11px; color: var(--color-texto-secundario); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 200px; cursor: pointer; }
+.jsonCell:hover { color: var(--color-primario); }
+
+.paginationInfo { display: flex; align-items: center; justify-content: space-between; padding: 12px 0 0; color: var(--color-texto-secundario); font-size: 13px; }
+.paginationBtns { display: flex; gap: 8px; }
+.paginationBtn {
+  height: 36px; padding: 0 14px; border-radius: 10px; border: 1px solid var(--color-borde);
+  background: transparent; color: var(--color-texto-body); font-size: 13px; cursor: pointer; transition: all 0.2s;
+}
+.paginationBtn:hover { background-color: var(--color-fondo-hover); border-color: var(--color-primario); }
+.paginationBtn:disabled { opacity: 0.4; cursor: not-allowed; }

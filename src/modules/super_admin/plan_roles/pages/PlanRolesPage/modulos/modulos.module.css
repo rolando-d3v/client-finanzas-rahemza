@@ -1,0 +1,440 @@
+@import "../../../../../../styles/color.css";
+
+/* ═══════════════════════════════════════════════════════════════
+   KPI GRID & TOOLBAR
+   ═══════════════════════════════════════════════════════════════ */
+.kpiGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.toolbarLeft {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   BUTTONS
+   ═══════════════════════════════════════════════════════════════ */
+.primaryBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: none;
+  background-color: var(--color-primario);
+  color: #111b21;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.primaryBtn:hover {
+  background-color: var(--color-primario-hover);
+}
+
+.primaryBtn:active {
+  transform: scale(0.97);
+}
+
+.primaryBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondaryBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background: transparent;
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.secondaryBtn:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-primario);
+}
+
+.dangerBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 14px;
+  border: none;
+  background-color: var(--color-error);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.dangerBtn:hover {
+  filter: brightness(1.1);
+}
+
+.dangerBtn:active {
+  transform: scale(0.97);
+}
+
+.iconBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid var(--color-borde);
+  background: transparent;
+  color: var(--color-texto-secundario);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.iconBtn:hover {
+  background-color: var(--color-fondo-hover);
+  border-color: var(--color-primario);
+  color: var(--color-primario);
+}
+
+.iconBtnDanger:hover {
+  background-color: var(--color-error-fondo);
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TABLE CARD & TREE TABLE
+   ═══════════════════════════════════════════════════════════════ */
+.tableCard {
+  background-color: var(--color-fondo-card);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde-suave);
+}
+
+.treeTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px;
+}
+
+.treeTable th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-texto-secundario);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.treeRow {
+  transition: background-color 0.15s;
+}
+
+.treeRow:hover {
+  background-color: var(--color-fondo-hover);
+}
+
+.treeRow td {
+  padding: 10px 12px;
+  font-size: 14px;
+  color: var(--color-texto-body);
+  border-bottom: 1px solid var(--color-borde-suave);
+}
+
+.treeIndent {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.treeConnector {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-left: 2px solid var(--color-borde);
+  border-bottom: 2px solid var(--color-borde);
+  border-radius: 0 0 0 6px;
+  margin-left: 4px;
+  flex-shrink: 0;
+}
+
+.treeSpacer {
+  display: inline-block;
+  width: 26px;
+  flex-shrink: 0;
+}
+
+.treeToggle {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: none;
+  background: var(--color-fondo-skeleton);
+  color: var(--color-texto-secundario);
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.treeToggle:hover {
+  background: var(--color-primario-suave);
+  color: var(--color-primario);
+}
+
+.treeIcon {
+  font-size: 18px;
+  width: 28px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.treeName {
+  font-weight: 500;
+}
+
+.treeCode {
+  font-size: 12px;
+  color: var(--color-texto-placeholder);
+  font-family: "Fira Code", "Cascadia Code", monospace;
+  background: var(--color-fondo-skeleton);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.treeActions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOGGLE SWITCH
+   ═══════════════════════════════════════════════════════════════ */
+.toggleSwitch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.toggleSwitchOn {
+  background: var(--color-exito);
+}
+
+.toggleSwitchOff {
+  background: var(--color-borde);
+}
+
+.toggleKnob {
+  position: absolute;
+  top: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.toggleKnobOn {
+  left: 23px;
+}
+
+.toggleKnobOff {
+  left: 3px;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   FORM
+   ═══════════════════════════════════════════════════════════════ */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.formLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.formInput {
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 14px;
+  border: 1px solid var(--color-borde);
+  background-color: var(--color-fondo-input);
+  color: var(--color-texto-body);
+  font-size: 14px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.formInput:focus {
+  border-color: var(--color-borde-focus);
+  box-shadow: var(--focus-ring);
+}
+
+.formError {
+  font-size: 12px;
+  color: var(--color-error);
+}
+
+.formHint {
+  font-size: 12px;
+  color: var(--color-texto-placeholder);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   CONFIRM DIALOG & EMPTY STATE
+   ═══════════════════════════════════════════════════════════════ */
+.confirmBody {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.confirmIcon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.confirmTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  margin: 0 0 8px 0;
+}
+
+.confirmText {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  gap: 12px;
+}
+
+.emptyIcon {
+  font-size: 48px;
+  opacity: 0.6;
+}
+
+.emptyTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  margin: 0;
+}
+
+.emptyText {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+  max-width: 400px;
+}
+
+@media (max-width: 768px) {
+  .toolbar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .treeTable {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   SIDEBAR BADGE — columna "Sidebar" en la tabla de módulos
+   ═══════════════════════════════════════════════════════════════ */
+.sidebarBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  white-space: nowrap;
+}
+
+.sidebarBadgeOn {
+  background: color-mix(in srgb, var(--color-success, #22c55e) 15%, transparent);
+  color: var(--color-success, #16a34a);
+  border: 1px solid color-mix(in srgb, var(--color-success, #22c55e) 35%, transparent);
+}
+
+.sidebarBadgeOff {
+  background: color-mix(in srgb, var(--color-texto-muted, #94a3b8) 12%, transparent);
+  color: var(--color-texto-muted, #64748b);
+  border: 1px solid color-mix(in srgb, var(--color-texto-muted, #94a3b8) 25%, transparent);
+}
+

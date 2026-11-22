@@ -1,0 +1,123 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 4px;
+}
+
+.pageTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  margin: 0;
+}
+
+.pageSubtitle {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+}
+
+.card {
+  background-color: var(--color-fondo-card);
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: var(--sombra-card);
+  border: 1px solid var(--color-borde-suave);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.avatarSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-primario);
+  background-color: var(--color-fondo-input);
+}
+
+.avatarPlaceholder {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primario-suave);
+  color: var(--color-primario);
+  font-size: 32px;
+  font-weight: 700;
+  border: 3px solid var(--color-primario);
+}
+
+.userName {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-texto-heading);
+  margin: 0;
+}
+
+.userEmail {
+  font-size: 14px;
+  color: var(--color-texto-secundario);
+  margin: 0;
+}
+
+.rolesContainer {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  background-color: var(--color-fondo-input);
+  border-radius: 14px;
+  border: 1px solid var(--color-borde-suave);
+}
+
+.infoIcon {
+  color: var(--color-primario);
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.infoLabel {
+  font-size: 12px;
+  color: var(--color-texto-secundario);
+  margin-bottom: 2px;
+}
+
+.infoValue {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-texto-heading);
+}
+
+.roleBadge {
+  display: inline-flex;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: var(--color-primario-suave);
+  color: var(--color-primario-texto);
+}
